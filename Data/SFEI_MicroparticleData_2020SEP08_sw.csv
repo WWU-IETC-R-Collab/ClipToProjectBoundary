@@ -1,0 +1,20 @@
+﻿SampleID,StationCode,SampleDate,ProjectCode,EventCode,ProtocolCode,AgencyCode,LocationCode,GeometryShape,collectiontime,SampleTypeCode,Repliacte,CollectionDeviceName,CollectionDepth,UnitCollectionDepth,PositionWaterColumn,LabCollectionComments
+17-POC-100-125&355,Line12F,2016-12-15,17-18_MP_Moore,WQ,RL,SFEI,MidChannel,Point,19:35,Integrated,1,"SFEI ISCO Pump, hand filled",-88,m,Subsurface,
+17-POC-130-125&355,Line12J,2016-12-15,17-18_MP_Moore,WQ,RL,SFEI,MidChannel,Point,20:23,Integrated,1,"SFEI ISCO Pump, hand filled",-88,m,Subsurface,
+17-POC-259-125&355,RefugioCk,2017-01-18,17-18_MP_Moore,WQ,RL,SFEI,MidChannel,Point,22:00,Integrated,1,"SFEI ISCO Pump, hand filled",-88,m,Subsurface,
+17-POC-283-125&355,ColmaCk,2017-02-07,17-18_MP_Moore,WQ,RL,SFEI,MidChannel,Point,10:30,Integrated,1,"SFEI ISCO Pump, hand filled",-88,m,Subsurface,
+17-POC-438-125&355,RodeoCk,2017-01-18,17-18_MP_Moore,WQ,RL,SFEI,MidChannel,Point,22:50,Integrated,1,"SFEI ISCO Pump, hand filled",-88,m,Subsurface,
+17-POC-515-125&355,Line12KEntrance,2017-02-09,17-18_MP_Moore,WQ,RL,SFEI,MidChannel,Point,15:35,Integrated,1,"SFEI ISCO Pump, hand filled",-88,m,Subsurface,
+17GR-003-125&355,GR,2017-01-08,17-18_MP_Moore,WQ,RL,SFEI,MidChannel,Point,20:40,Integrated,1,Individual Collection by bucket sampler,-88,m,Surface,
+19-POC-197-100-SFEILabBlank,FIELDQA,2018-11-29,17-18_MP_Moore,WQ,RL,SFEI,Not Applicable,Point,12:00,FieldBlank,1,Individual Collection by hand,-88,m,Not Applicable,Lab blank. Poured DI water directly into jar while processing sieves into jars. 
+19-POC-198-125&355,Line12MColWay,2018-11-29,17-18_MP_Moore,WQ,RL,SFEI,MidChannel,Point,00:35,Integrated,1,"SFEI ISCO Pump, hand filled",-88,m,Subsurface,Tried to do MP blank but primary sieves hit the ground and soaked up mud. This set was discarded and the set brought for a blank was used as the primary sample. The switch was made right after sample equipment was set up. 
+19-POC-199-125&355,Line12MColWay,2018-11-29,17-18_MP_Moore,WQ,RL,SFEI,MidChannel,Point,00:35,Integrated,2,"SFEI ISCO Pump, hand filled",-88,m,Subsurface,
+20180108MMPStormCBEmery125&355,Line12AShell,2018-01-08,17-18_MP_Moore,WQ,RL,SFEI,MidChannel,Point,22:48,Integrated,1,"SFEI ISCO Pump, hand filled",-88,m,Subsurface,Tried to do MP blank but primary sieves hit the ground and soaked up mud. This set was discarded and the set brought for a blank was used as the primary sample. The switch was made right after sample equipment was set up. 
+20180108MMPStormCBMeek125&355,Meeker Slough,2018-01-08,17-18_MP_Moore,WQ,RL,SFEI,MidChannel,Point,14:40,Integrated,1,"SFEI ISCO Pump, hand filled",-88,m,Subsurface,
+20180108MMPStormSBCCMPblank,FIELDQA,2018-01-08,17-18_MP_Moore,WQ,RL,SFEI,Not Applicable,Point,21:55,FieldBlank,1,"SFEI ISCO Pump, hand filled",-88,m,Not Applicable,Blanks were open to the air while the field sample was being pumped. Did not pour water through in the field.  Rinsed out the sieves into the blank sample jar the same was as the field samples.
+20180108MMPStormSBSMMP125&355,MMP-Storm-SB-SM,2018-01-08,17-18_MP_Moore,WQ,RL,SFEI,MidChannel,Point,21:55,Integrated,1,"SFEI ISCO Pump, hand filled",-88,m,Subsurface,
+20180406MMPStormSBCCMP125&355,MMP-Storm-SB-CC,2018-04-06,17-18_MP_Moore,WQ,RL,5Gyres,MidChannel,Point,10:28,Integrated,1,"SFEI ISCO Pump, hand filled",-88,m,Subsurface,
+Bottle Blank,FIELDQA,1950-01-01,17-18_MP_Moore,WQ,RL,SFEI,Not Applicable,Point,00:00,FieldBlank,1,Individual Collection by hand,,,Not Applicable,
+Lab Blank 1,LABQA,1950-01-01,17-18_MP_Moore,WQ,RL,UoT-RL,Not Applicable,Point,00:00,LabBlank,1,None,-88,m,Not Applicable,
+Lab Blank 2,LABQA,1950-01-01,17-18_MP_Moore,WQ,RL,UoT-RL,Not Applicable,Point,00:00,LabBlank,1,None,-88,m,Not Applicable,
+Lab Blank 3,LABQA,1950-01-01,17-18_MP_Moore,WQ,RL,UoT-RL,Not Applicable,Point,00:00,LabBlank,1,None,-88,m,Not Applicable,
