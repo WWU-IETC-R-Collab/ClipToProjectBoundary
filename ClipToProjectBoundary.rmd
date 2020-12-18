@@ -16,6 +16,7 @@ output:
 knitr::opts_chunk$set(message=F, warning=F, results=F)
 library(knitr)
 ```
+# Delete this later
 
 Emma was wondering how to clip a data set to only include the data within her project risk regions. There are two methods I can recommend:
 
