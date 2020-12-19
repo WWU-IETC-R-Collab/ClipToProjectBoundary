@@ -1,0 +1,53 @@
+---
+title: "SFEI Data Wrangling"
+author: "Skyler Elmstrom"
+date: "12/18/2020"
+output:
+  html_document:
+    code_folding: show
+    code_download: true
+    keep_md: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+library(data.table)
+library(here)
+library(sf)
+library(plyr)
+library(tidyverse)
+
+```
+
+```{r}
+# Add SFEI Data Tables
+SFEI.loc <- read.csv("Data/SFEI_MicroparticleData_2020SEP08_locations.csv", fileEncoding="UTF-8-BOM") %>%
+  select(-OBJECTID) %>%
+  rename(StationCode = StationID)
+SFEI.fish <- read.csv("Data/SFEI_MicroparticleData_2020SEP08_fish.csv", fileEncoding="UTF-8-BOM")
+SFEI.eff <- read.csv("Data/SFEI_MicroparticleData_2020SEP08_eff.csv", fileEncoding="UTF-8-BOM")
+SFEI.sw <- read.csv("Data/SFEI_MicroparticleData_2020SEP08_sw.csv", fileEncoding="UTF-8-BOM")
+SFEI.sed <- read.csv("Data/SFEI_MicroparticleData_2020SEP08_sed.csv", fileEncoding="UTF-8-BOM")
+SFEI.particles <- read.csv("Data/SFEI_MicroparticleData_2020SEP08_Particles.csv", fileEncoding="UTF-8-BOM")
+SFEI.manta <- read.csv("Data/SFEI_MicroparticleData_2020SEP18_MantaFullCoordinates.csv", fileEncoding="UTF-8-BOM")
+```
+
+```{r}
+SFEI.StationTables <- list(SFEI.eff, SFEI.fish, SFEI.sed, SFEI.sw)
+
+
+# https://stackoverflow.com/questions/43938863/dplyr-filter-with-condition-on-multiple-columns
+SFEI.ID.Table1 <- rbindlist(SFEI.StationTables, use.names=T, fill=T)
+SFEI.ID.Table2 <- SFEI.ID.Table1 %>%
+  filter(!SampleID=="") %>%
+  filter(!SampleID %like% "Blank", !SampleTypeCode %like% "Blank") %>%
+  select(intersect( colnames(SFEI.sw),  colnames(SFEI.eff))) %>%
+  select(-contains("Collection"))
+```
+
+
+

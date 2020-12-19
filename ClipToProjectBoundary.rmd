@@ -127,3 +127,25 @@ xfun::session_info('rmarkdown')
 ```
 </details>
 <br><br>
+
+## Exporting sf Objects to CSV
+CSV will split sf geometries into two seperate columsn since CSV is comma delimited by default. We can avoid this using `st_write()` and the `layer_options = "GEOMETRY=AS_XY"` parameter. This will save a CSV with `X` and `Y` columns containing the latitude and longitude rather than a `geometries` column with list coordinates (i.e. `c(32.000,-122.000)` ).
+
+```{r}
+SFEI.fish.sf.df <- data.frame(SFEI.fish.sf)
+st_write(SFEI.fish.sf, "Data/SFEI_MicroparticleData_18DEC2020_fish.csv", layer_options = "GEOMETRY=AS_XY")
+```
+
+# Subsetting Microparticle Data by Risk Region
+
+We will be completing another join (joining Particles to Fish data) except this time we will be using `SampleID` to complete the join rather than `StationID`/`StationCode`.
+
+
+```{r}
+SFEI.particles <- read.csv("Data/SFEI_MicroparticleData_2020SEP08_particles.csv", fileEncoding="UTF-8-BOM")
+
+SFEI.particles.loc <- inner_join(SFEI.particles, SFEI.fish.sf, by = "SampleID") # cross-join
+
+SFEI.particles.loc <- SFEI.particles.loc[SFB.riskregions,]
+```
+
