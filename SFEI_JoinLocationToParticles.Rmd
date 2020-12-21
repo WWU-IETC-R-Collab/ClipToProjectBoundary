@@ -58,8 +58,7 @@ SFEI.manta <- read.csv("Data/SFEI_MicroparticleData_2020SEP18_MantaFullCoordinat
 ```{r Combine-Tables}
 SFEI.StationTables <- list(SFEI.eff, SFEI.fish, SFEI.manta, SFEI.sed, SFEI.sw)
 
-# https://stackoverflow.com/questions/43938863/dplyr-filter-with-condition-on-multiple-columns
-SFEI.ID.Table <- rbindlist(SFEI.StationTables, use.names=T, fill=T)
+SFEI.ID.Table <- rbindlist(SFEI.StationTables, use.names=T, fill=T) # combines tables and removes duplicate columns
 SFEI.ID.Table <- SFEI.ID.Table %>%
   filter(!SampleID=="") %>% # remove empty rows
   filter(!SampleID %like% "Blank", !SampleTypeCode %like% "Blank") %>% # remove all blank rows
