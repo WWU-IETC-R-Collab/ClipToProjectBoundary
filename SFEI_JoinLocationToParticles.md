@@ -18,34 +18,11 @@ This markdown is a follow-up to subsetting data within an SFEI microplastics tab
 
 ```r
 library(data.table)
-library(here)
-```
-
-```
-## here() starts at P:/Desktop/WWU Job 2020/R/GitHub/ClipToProjectBoundary
-```
-
-```r
 library(sf)
 ```
 
 ```
 ## Linking to GEOS 3.8.0, GDAL 3.0.4, PROJ 6.3.1
-```
-
-```r
-library(plyr)
-```
-
-```
-## 
-## Attaching package: 'plyr'
-```
-
-```
-## The following object is masked from 'package:here':
-## 
-##     here
 ```
 
 ```r
@@ -65,20 +42,11 @@ library(tidyverse)
 
 ```
 ## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
-## x dplyr::arrange()   masks plyr::arrange()
 ## x dplyr::between()   masks data.table::between()
-## x purrr::compact()   masks plyr::compact()
-## x dplyr::count()     masks plyr::count()
-## x dplyr::failwith()  masks plyr::failwith()
 ## x dplyr::filter()    masks stats::filter()
 ## x dplyr::first()     masks data.table::first()
-## x dplyr::id()        masks plyr::id()
 ## x dplyr::lag()       masks stats::lag()
 ## x dplyr::last()      masks data.table::last()
-## x dplyr::mutate()    masks plyr::mutate()
-## x dplyr::rename()    masks plyr::rename()
-## x dplyr::summarise() masks plyr::summarise()
-## x dplyr::summarize() masks plyr::summarize()
 ## x purrr::transpose() masks data.table::transpose()
 ```
 
@@ -120,8 +88,7 @@ SFEI.manta <- read.csv("Data/SFEI_MicroparticleData_2020SEP18_MantaFullCoordinat
 ```r
 SFEI.StationTables <- list(SFEI.eff, SFEI.fish, SFEI.manta, SFEI.sed, SFEI.sw)
 
-# https://stackoverflow.com/questions/43938863/dplyr-filter-with-condition-on-multiple-columns
-SFEI.ID.Table <- rbindlist(SFEI.StationTables, use.names=T, fill=T)
+SFEI.ID.Table <- rbindlist(SFEI.StationTables, use.names=T, fill=T) # quickly combines list of tables and removes duplicate columns
 SFEI.ID.Table <- SFEI.ID.Table %>%
   filter(!SampleID=="") %>% # remove empty rows
   filter(!SampleID %like% "Blank", !SampleTypeCode %like% "Blank") %>% # remove all blank rows

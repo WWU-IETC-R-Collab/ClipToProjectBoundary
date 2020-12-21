@@ -19,9 +19,7 @@ This markdown is a follow-up to subsetting data within an SFEI microplastics tab
   <summary><b>Libraries</b></summary>
 ```{r}
 library(data.table)
-library(here)
 library(sf)
-library(plyr)
 library(tidyverse)
 library(knitr)
 ```
