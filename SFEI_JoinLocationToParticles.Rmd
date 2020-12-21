@@ -58,7 +58,7 @@ SFEI.manta <- read.csv("Data/SFEI_MicroparticleData_2020SEP18_MantaFullCoordinat
 ```{r Combine-Tables}
 SFEI.StationTables <- list(SFEI.eff, SFEI.fish, SFEI.manta, SFEI.sed, SFEI.sw)
 
-SFEI.ID.Table <- rbindlist(SFEI.StationTables, use.names=T, fill=T) # combines tables and removes duplicate columns
+SFEI.ID.Table <- rbindlist(SFEI.StationTables, use.names=T, fill=T) # quickly combines list of tables and removes duplicate columns
 SFEI.ID.Table <- SFEI.ID.Table %>%
   filter(!SampleID=="") %>% # remove empty rows
   filter(!SampleID %like% "Blank", !SampleTypeCode %like% "Blank") %>% # remove all blank rows
