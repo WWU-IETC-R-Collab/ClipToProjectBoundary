@@ -67,6 +67,7 @@ SFEI.fish.loc.noblanks <- SFEI.fish.loc %>%
 
 # Convert Data to Final SF Object
 SFEI.fish.sf <- st_as_sf(SFEI.fish.loc.noblanks, coords = c("Latitude", "Longitude"), crs = "WGS84")
+st_crs(SFEI.fish.sf)
 
 #########################
 ### Load Risk Regions ###
@@ -75,6 +76,8 @@ SFEI.fish.sf <- st_as_sf(SFEI.fish.loc.noblanks, coords = c("Latitude", "Longitu
 SFB.riskregions <- here("data/SFB_RiskRegions_Prelim20AUG2020.shp") %>% # path relative to main directory
   st_read() %>% # transforms shapefile CRS to WGS84 vs NAD83
   st_transform(st_crs(SFEI.fish.sf))
+
+st_crs(SFB.riskregions)
 ```
 <br><br>
 
@@ -148,4 +151,5 @@ SFEI.particles.loc <- inner_join(SFEI.particles, SFEI.fish.sf, by = "SampleID") 
 
 SFEI.particles.loc <- SFEI.particles.loc[SFB.riskregions,]
 ```
+
 
