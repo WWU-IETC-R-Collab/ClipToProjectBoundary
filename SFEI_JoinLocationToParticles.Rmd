@@ -79,6 +79,9 @@ SFEI.ID.particles <- left_join(SFEI.particles, SFEI.ID.loc, by = "SampleID") %>%
 # Convert Tables to sf
 SFEI.ID.particles.sf <- st_as_sf(SFEI.ID.particles, coords = c("Longitude", "Latitude"), crs = "WGS84")
 
+# write shapefile for SFEI.ID.particles.sf
+# st_write(SFEI.ID.particles.sf, "SFEI.ID.particles.shp")
+
 # Load Shapefiles
 SFB.riskregions <- st_read("Data/SFB_RiskRegions_Prelim20AUG2020.shp") %>% # transforms shapefile CRS to WGS84 vs NAD83
   st_transform(st_crs(SFEI.ID.particles.sf))
