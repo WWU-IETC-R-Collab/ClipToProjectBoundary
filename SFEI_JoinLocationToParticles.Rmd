@@ -82,6 +82,10 @@ SFEI.ID.particles.sf <- st_as_sf(SFEI.ID.particles, coords = c("Longitude", "Lat
 # write shapefile for SFEI.ID.particles.sf
 # st_write(SFEI.ID.particles.sf, "SFEI.ID.particles.shp")
 
+## Zip up newly created shapefiles:
+# library(utils)
+# zip(zipfile = "SFEI.particles.locations.zip", files = c("SFEI.ID.particles.dbf", "SFEI.ID.particles.prj", "SFEI.ID.particles.shp", "SFEI.ID.particles.shx")) 
+
 # Load Shapefiles
 SFB.riskregions <- st_read("Data/SFB_RiskRegions_Prelim20AUG2020.shp") %>% # transforms shapefile CRS to WGS84 vs NAD83
   st_transform(st_crs(SFEI.ID.particles.sf))
